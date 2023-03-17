@@ -1,0 +1,21 @@
+# Simple Python script to fully load webpage on startup on Raspberry Pi.
+#
+# To run at startup: sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+#
+# Add the following:
+# @python3 /path/to/script.py
+#
+# Future Reference for how to autostart: https://forums.raspberrypi.com/viewtopic.php?t=294014 
+#
+# Screen blanking can be disabled by going to "Preferences" > "Raspberry Pi Configuration" >"Display".
+
+import pyautogui
+import webbrowser
+import subprocess
+
+pyautogui.sleep(4)
+webbrowser.open('https://www.webiste.com')
+pyautogui.sleep(6)
+
+#Make full screen
+pyautogui.hotkey('F11')
